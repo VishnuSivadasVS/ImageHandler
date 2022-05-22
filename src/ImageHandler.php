@@ -42,7 +42,7 @@ class ImageHandler
      **/
     private function grabImage($url, $imageInfo)
     {
-        $temp_path = "/assets/temp-images/temp." . $imageInfo['ext'];
+        $temp_path = getcwd() . "/assets/temp-images/temp." . $imageInfo['ext'];
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
