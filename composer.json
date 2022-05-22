@@ -1,0 +1,24 @@
+{
+    "name": "codeseasy/imagehandler",
+    "description": "A package to get remote image file size",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vishnu Sivadas",
+            "email": "support@codeseasy.com"
+        }
+    ],
+    "homepage": "https://github.com/vishnusivadasvs/ImageHandler",
+    "support": {
+      "issues": "https://github.com/vishnusivadasvs/ImageHandler/issues",
+      "source": "https://github.com/vishnusivadasvs/ImageHandler"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "codeseasy\\imagehandler\\": "src/"
+        }
+    },
+    "require": {}
+}
