@@ -20,5 +20,8 @@
             "codeseasy\\imagehandler\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "ext-json": "*",
+        "ext-curl": "*"
+    }
 }

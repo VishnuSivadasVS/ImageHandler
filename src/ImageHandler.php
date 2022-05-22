@@ -5,7 +5,7 @@ namespace codeseasy\imagehandler;
 /**
  *
  * @author Codes Easy <support@codeseasy.com>
- * @copyright Copyright (c), 2021 | VishnuSivadas.com
+ * @copyright Copyright (c), 2022 | VishnuSivadas.com
  * @license MIT public license 
  * @version 1.0
  * @link https://www.codeseasy.com
@@ -27,7 +27,7 @@ class ImageHandler
         $imageInfo = getimagesize($url);
         $imageInfo = $this->getFileExt($imageInfo);
         $this->grabImage($url, $imageInfo);
-        $temp_path = getcwd() . "/temp-images/temp." . $imageInfo['ext'];
+        $temp_path = getcwd() . "/assets/temp-images/temp." . $imageInfo['ext'];
 
         $image_size = filesize($temp_path);
         $imageInfo['size'] = $image_size;
@@ -37,12 +37,12 @@ class ImageHandler
     /**
      * Download remote image file and store in temp folder
      *
-     * @param array $imageInfo contains file extention and other details about the image
+     * @param array $imageInfo contains file extension and other details about the image
      *
      **/
     private function grabImage($url, $imageInfo)
     {
-        $temp_path = "temp-images/temp." . $imageInfo['ext'];
+        $temp_path = "/assets/temp-images/temp." . $imageInfo['ext'];
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -58,10 +58,10 @@ class ImageHandler
 
 
     /**
-     * Get file extention
+     * Get file extension
      *
      * @param array $imageInfo contains some details about the image
-     * @return array contains file extention and other details about the image
+     * @return array contains file extension and other details about the image
      *
      **/
     private function getFileExt($imageInfo)
