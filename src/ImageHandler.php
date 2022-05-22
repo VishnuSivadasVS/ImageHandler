@@ -6,7 +6,7 @@ namespace codeseasy\imagehandler;
  *
  * @author Codes Easy <support@codeseasy.com>
  * @copyright Copyright (c), 2022 | VishnuSivadas.com
- * @license MIT public license 
+ * @license MIT public license
  * @version 1.0
  * @link https://www.codeseasy.com
  * @package codeseasy\imagehandler
@@ -27,7 +27,7 @@ class ImageHandler
         $imageInfo = getimagesize($url);
         $imageInfo = $this->getFileExt($imageInfo);
         $this->grabImage($url, $imageInfo);
-        $temp_path = getcwd() . "/assets/temp-images/temp." . $imageInfo['ext'];
+        $temp_path = __DIR__  . "/../assets/temp-images/temp." . $imageInfo['ext'];
 
         $image_size = filesize($temp_path);
         $imageInfo['size'] = $image_size;
@@ -42,7 +42,7 @@ class ImageHandler
      **/
     private function grabImage($url, $imageInfo)
     {
-        $temp_path = getcwd() . "/assets/temp-images/temp." . $imageInfo['ext'];
+        $temp_path = __DIR__  . "/../assets/temp-images/temp." . $imageInfo['ext'];
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
